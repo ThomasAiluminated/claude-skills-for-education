@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Skills for Education · Thomas Donvil</title>
+<meta name="description" content="Open Claude skills for teachers, lecturers, trainers and L&D professionals: prompts, lessons, rubrics, test questions, feedback, inclusive materials and training programs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf8f4; --surface:#ffffff; --text:#1d1b19; --muted:#625d57; --line:#e6e1d9;
+  --accent:#c4562f; --accent-soft:#f6e6de; --chip:#f1ede6;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#161514; --surface:#1f1e1c; --text:#f1eee9; --muted:#a8a29b; --line:#33302c;
+    --accent:#e8845e; --accent-soft:#3a2720; --chip:#2a2826; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{padding:28px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{font-weight:600;text-decoration:none}
+.brand span{color:var(--accent)}
+.lang{display:flex;gap:4px;background:var(--chip);border-radius:999px;padding:4px}
+.lang button{border:0;background:transparent;color:var(--muted);font:500 14px Inter,sans-serif;padding:6px 12px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.hero{padding:56px 0 40px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(36px,6vw,60px);line-height:1.05;margin:12px 0 20px;letter-spacing:-.01em}
+.lede{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:640px;margin:0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{border:1px solid var(--line);background:var(--surface)}
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:24px 0 56px}
+.principle{border-top:2px solid var(--accent);padding-top:12px}
+.principle b{display:block;margin-bottom:4px}
+.principle p{margin:0;color:var(--muted);font-size:15px}
+h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:30px;margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.card .icon{width:40px;height:40px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;font-size:20px}
+.card h3{margin:4px 0 0;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:15px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{background:var(--chip);color:var(--muted);font-size:12px;padding:3px 9px;border-radius:999px}
+.card .links{display:flex;gap:16px;font-size:14px;font-weight:600;margin-top:6px}
+.card .links a{color:var(--accent);text-decoration:none}
+.card .links a:hover{text-decoration:underline}
+.install{margin:64px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.step .n{font-family:Fraunces,Georgia,serif;font-size:28px;color:var(--accent)}
+.step p{margin:6px 0 0;color:var(--muted);font-size:15px}
+code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:.92em}
+.about{display:grid;grid-template-columns:1fr;gap:8px;border-top:1px solid var(--line);padding:40px 0 64px}
+.about p{margin:0;color:var(--muted);max-width:720px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14px}
+html:not([lang="nl"]) [data-lang="nl"], html[lang="nl"] [data-lang="en"]{display:none !important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="https://github.com/ThomasAiluminated">Thomas Donvil <span>·</span> Ailuminated</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set="nl" aria-pressed="false">NL</button>
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Claude Skills for Education</div>
+    <h1 data-lang="en">AI that teaches like a good colleague.</h1>
+    <h1 data-lang="nl">AI die werkt als een goede collega.</h1>
+    <p class="lede" data-lang="en">Free, open Claude skills for teachers, lecturers, trainers and L&amp;D professionals. Built on sound pedagogy, with the teacher always in charge of judgment and grading.</p>
+    <p class="lede" data-lang="nl">Gratis, open Claude-skills voor leerkrachten, docenten, trainers en L&amp;D-professionals. Gebouwd op goede didactiek, met het oordeel en het cijfer altijd bij de leerkracht.</p>
+    <div class="cta">
+      <a class="btn primary" href="#skills" data-lang="en">Browse the skills</a>
+      <a class="btn primary" href="#skills" data-lang="nl">Bekijk de skills</a>
+      <a class="btn ghost" href="https://github.com/ThomasAiluminated/claude-skills-for-education">GitHub</a>
+    </div>
+  </section>
+
+  <section class="principles">
+    <div class="principle"><b data-lang="en">Grounded in pedagogy</b><b data-lang="nl">Gebouwd op didactiek</b>
+      <p data-lang="en">Constructive alignment, explicit instruction, feedback research and UDL.</p>
+      <p data-lang="nl">Constructive alignment, expliciete instructie, feedbackonderzoek en UDL.</p></div>
+    <div class="principle"><b data-lang="en">Teacher in charge</b><b data-lang="nl">De leerkracht beslist</b>
+      <p data-lang="en">The AI drafts; you decide. No grades left to a model.</p>
+      <p data-lang="nl">De AI maakt een voorstel; jij beslist. Geen cijfers door een model.</p></div>
+    <div class="principle"><b data-lang="en">Trilingual</b><b data-lang="nl">Drietalig</b>
+      <p data-lang="en">Works in Dutch, French and English, with local education terms.</p>
+      <p data-lang="nl">Werkt in het Nederlands, Frans en Engels, met de juiste onderwijstermen.</p></div>
+    <div class="principle"><b data-lang="en">Open and free</b><b data-lang="nl">Open en gratis</b>
+      <p data-lang="en">CC BY 4.0. Use, adapt and share them in your school.</p>
+      <p data-lang="nl">CC BY 4.0. Gebruik, pas aan en deel ze in je school.</p></div>
+  </section>
+
+  <section id="skills">
+    <h2 data-lang="en">The skills</h2>
+    <h2 data-lang="nl">De skills</h2>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="install" aria-label="Install">
+    <div class="step"><div class="n">1</div><b data-lang="en">Download</b><b data-lang="nl">Download</b>
+      <p data-lang="en">Pick a skill and download its <code>.skill</code> file.</p>
+      <p data-lang="nl">Kies een skill en download het <code>.skill</code>-bestand.</p></div>
+    <div class="step"><div class="n">2</div><b data-lang="en">Add to Claude</b><b data-lang="nl">Toevoegen aan Claude</b>
+      <p data-lang="en">Upload it under Skills in your Claude settings, or open it in a chat and click <i>Save skill</i>.</p>
+      <p data-lang="nl">Upload het bij de Skills in je Claude-instellingen, of open het in een gesprek en klik op <i>Save skill</i>.</p></div>
+    <div class="step"><div class="n">3</div><b data-lang="en">Just ask</b><b data-lang="nl">Stel je vraag</b>
+      <p data-lang="en">Ask as you normally would, e.g. "make a rubric for internship reports". The skill starts by itself.</p>
+      <p data-lang="nl">Vraag het zoals je gewoon zou doen, bv. "maak een rubric voor stageverslagen". De skill start vanzelf.</p></div>
+  </section>
+
+  <section class="about">
+    <h2 data-lang="en">About</h2>
+    <h2 data-lang="nl">Over</h2>
+    <p data-lang="en">Made by Thomas Donvil, AI &amp; EdTech researcher at UCLL and founder of <a href="https://ailuminated.org">Ailuminated</a>. Author of <i>The AI Educator Playbook: Reimagining Higher Education with AI</i> (Routledge) and <i>AI in de Aula</i>.</p>
+    <p data-lang="nl">Gemaakt door Thomas Donvil, onderzoeker AI &amp; EdTech aan UCLL en oprichter van <a href="https://ailuminated.org">Ailuminated</a>. Auteur van <i>The AI Educator Playbook: Reimagining Higher Education with AI</i> (Routledge) en <i>AI in de Aula</i>.</p>
+  </section>
+</div>
+<footer><div class="wrap">CC BY 4.0 · <a href="https://ailuminated.org">ailuminated.org</a> · <a href="https://github.com/ThomasAiluminated">GitHub</a></div></footer>
+
+<script>
+const U = "https://github.com/ThomasAiluminated/";
+const D = "https://github.com/ThomasAiluminated/claude-skills-for-education/raw/main/downloads/";
+const skills = [
+  {s:"edu-prompt-coach", n:"Edu Prompt Coach", i:"💬", t:["prompts","teachers"],
+   en:"Ready-to-paste prompts for any AI tool, plus a short note on the pedagogy that makes them work.",
+   nl:"Kant-en-klare prompts voor elke AI-tool, met een korte didactische uitleg waarom ze werken."},
+  {s:"lesson-designer", n:"Lesson Designer", i:"🗓️", t:["lessons","new"],
+   en:"Lessons designed from learning objective to exit check, with worked examples and timings that add up.",
+   nl:"Lessen van leerdoel tot exit-check, met uitgewerkte voorbeelden en een timing die klopt."},
+  {s:"rubric-builder", n:"Rubric Builder", i:"📏", t:["assessment"],
+   en:"Fair rubrics with observable levels, a student-friendly version and a calibration check.",
+   nl:"Eerlijke rubrics met observeerbare niveaus, een studentenversie en een kalibratiecheck."},
+  {s:"assessment-item-writer", n:"Assessment Item Writer", i:"✅", t:["assessment"],
+   en:"Test and exam questions with plausible distractors, an answer key and feedback per option.",
+   nl:"Toets- en examenvragen met plausibele afleiders, een sleutel en feedback per optie."},
+  {s:"feedback-writer", n:"Feedback Writer", i:"✍️", t:["feedback","new"],
+   en:"Specific, actionable feedback on student work, tied to the objective. The grade stays with you.",
+   nl:"Specifieke, haalbare feedback op leerlingenwerk, gekoppeld aan het leerdoel. Het cijfer blijft bij jou."},
+  {s:"inclusive-lesson-adapter", n:"Inclusive Lesson Adapter", i:"🌈", t:["UDL","inclusion","new"],
+   en:"Makes materials accessible with Universal Design for Learning, without lowering the objective.",
+   nl:"Maakt lesmateriaal toegankelijk met Universal Design for Learning, zonder het leerdoel te verlagen."},
+  {s:"learning-program-designer", n:"Learning Program Designer", i:"🏗️", t:["L&D","training"],
+   en:"Training programs from performance need to session plans, workplace transfer and evaluation.",
+   nl:"Opleidingen van prestatiebehoefte tot sessieplannen, transfer naar de werkvloer en evaluatie."},
+  {s:"prompt-architect", n:"Prompt Architect", i:"🧭", t:["prompts","Claude"],
+   en:"Turns a rough one-line request into a strong, reusable prompt for Claude.",
+   nl:"Zet een ruwe vraag van één zin om in een sterke, herbruikbare prompt voor Claude."}
+];
+const grid = document.getElementById("grid");
+grid.innerHTML = skills.map(k => `
+  <article class="card">
+    <div class="icon" aria-hidden="true">${k.i}</div>
+    <h3>${k.n}</h3>
+    <p data-lang="en">${k.en}</p><p data-lang="nl">${k.nl}</p>
+    <div class="tags">${k.t.map(x=>`<span class="tag">${x}</span>`).join("")}</div>
+    <div class="links">
+      <a href="${D}${k.s}.skill">Download</a>
+      <a href="${U}${k.s}">GitHub</a>
+      <a href="${U}${k.s}/tree/main/examples"><span data-lang="en">Example</span><span data-lang="nl">Voorbeeld</span></a>
+    </div>
+  </article>`).join("");
+
+function setLang(l){
+  document.documentElement.lang = l;
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.set === l));
+  try { localStorage.setItem("lang", l); } catch(e) {}
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.set)));
+let saved = null; try { saved = localStorage.getItem("lang"); } catch(e) {}
+setLang(saved || ((navigator.language||"").toLowerCase().startsWith("nl") ? "nl" : "en"));
+</script>
+</body>
+</html>
